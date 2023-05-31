@@ -4,48 +4,35 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <title>Career Page</title>
   <style>
-    h1{
-      font-family: Roboto;
-      text-align: center;
-      color: rgb(180, 180, 100)
-    }
     #banner{
-      width: 100%;
       height: 360px;
+      width: 100%;
       object-fit: cover;
-    }
-    h2{
-      font-family: Roboto;
-      color: rgb(180, 180, 100);
-      text-align: center;
-    } 
-    .bodytext {
-        font-family: rosybrown; 
-        text-align: center; 
-        color: rgb(80,90,90)
-    }
-    #container{
-        max-width: 720px;
-        margin: 0 auto 0 auto;
     }
   </style>
 </head>
 <body>
-  <div id='container'>
-    <h1>Think And Code</h1>
-  <img id="banner" src="https://careers-website.bhaskarpatel.repl.co/static/banner.jpg" height='320'>
-  <h2>About Think And Code</h2>
+  <div class='container'>
+    <h1 class='text-center'>Think And Code</h1>
+  <img class='img-fluid' id="banner" src="https://careers-website.bhaskarpatel.repl.co/static/banner.jpg">
+  <h2 class='text-center mt-4'>About Think And Code</h2>
   <p>Think And Code is a coding learnign site, whrer you can learn and practice your frontend web development. Here you can find verios HTML, CSS, JavaScript and React projects for your practice. Let's Start your career from here.</p>
   <hr>
-  <h2>Open Positions</h2>
-  <p>TODO: Show jobs here</p>
-    <div style='text-align: center'>
-      <button>Contect Us</button>
-      <p>Copyright 2023 @ThinkAndCode</p>
-    </div>
-    
+  <h2 class='text-center mt-4'>Open Positions</h2>
+  <div>
+    {% for job in jobs %}
+    {% include 'jobitem.html' %}
+    {% endfor %}
   </div>
+  <div class='text-center'>
+    <button class='btn btn-primary mb-4'>Contect Us</button>
+    <p>Copyright 2023 @ThinkAndCode</p>
+  </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>
